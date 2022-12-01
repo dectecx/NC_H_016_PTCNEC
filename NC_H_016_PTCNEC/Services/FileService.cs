@@ -24,6 +24,14 @@ public class FileService
     /// </summary>
     public FileService(string rootPath, string basePath)
     {
+        if (string.IsNullOrWhiteSpace(rootPath))
+        {
+            throw new ArgumentNullException(nameof(rootPath));
+        }
+        if (string.IsNullOrWhiteSpace(basePath))
+        {
+            throw new ArgumentNullException(nameof(basePath));
+        }
         this._rootPath = rootPath;
         this._basePath = basePath;
     }
@@ -62,7 +70,7 @@ public class FileService
     /// </summary>
     /// <param name="relativePath">資料夾相對路徑</param>
     /// <param name="expiredDay">有效天數</param>
-    public void CleanUpOutdatedFile(string relativePath, int expiredDay)
+    public void CleanUpOutdatedFile(string? relativePath, int expiredDay)
     {
         string fullPath = $"{this._rootPath}/{this._basePath}/{relativePath}";
         if (!Directory.Exists(fullPath))
@@ -104,7 +112,7 @@ public class FileService
         {
             return new("格式不符:參數長度不等於18");
         }
-        Regex regex = new(@"^IF[a-zA-Z0-9]{6}\d{8}.[1-7]{1}$");
+        Regex regex = new(@"^IF[a-zA-Z0-9]{6}\d{8}\.[1-7]{1}$");
         if (!regex.Match(input).Success)
         {
             return new("格式不符:不符合標準格式IFxxxxxxyyyyMMdd.x");
@@ -119,7 +127,7 @@ public class FileService
         string week = input[17..18];
 
         bool parsedDate = DateOnly.TryParse($"{year}/{month}/{day}", out DateOnly date);
-        if (!parsedDate)
+        if (!parsedDate || date.Year < 1900 || date.Year > 2100)
         {
             return new("格式不符:第9至16碼須符合yyyyMMddHH格式");
         }

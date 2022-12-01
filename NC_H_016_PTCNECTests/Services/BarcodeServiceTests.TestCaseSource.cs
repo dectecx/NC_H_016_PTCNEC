@@ -79,7 +79,7 @@ public partial class BarcodeServiceTests
                 yield return new TestCaseData($"{start5}{targetDate}01")
                     .SetArgDisplayNames($"{nameof(正確資料)}-年月日正常{targetDate}");
             }
-            yield return new TestCaseData($"{start5}2022022901")
+            yield return new TestCaseData($"{start5}2020022901")
                 .SetArgDisplayNames($"{nameof(正確資料)}-閏年二月合理");
             yield return new TestCaseData($"{start5}2000022901")
                 .SetArgDisplayNames($"{nameof(正確資料)}-千禧年是閏年日期合理");
