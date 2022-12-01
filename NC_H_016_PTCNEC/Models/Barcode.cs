@@ -3,7 +3,7 @@
 /// <summary>
 /// 條碼模型
 /// </summary>
-internal class Barcode
+public class Barcode
 {
     /// <summary>
     /// 商品條碼

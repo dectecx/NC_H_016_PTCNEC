@@ -3,7 +3,7 @@
 /// <summary>
 /// 檔案模型
 /// </summary>
-internal class FileVo
+public class FileVo
 {
     /// <summary>
     /// 前綴

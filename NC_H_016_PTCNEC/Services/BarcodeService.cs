@@ -7,7 +7,7 @@ namespace NC_H_016_PTCNEC.Services;
 /// <summary>
 /// 條碼服務
 /// </summary>
-internal class BarcodeService
+public class BarcodeService
 {
     /// <summary>
     /// 通知時間
@@ -22,7 +22,7 @@ internal class BarcodeService
     /// <summary>
     /// 建構子
     /// </summary>
-    internal BarcodeService(int notifyExpireMinutes, int expireMinutes)
+    public BarcodeService(int notifyExpireMinutes, int expireMinutes)
     {
         this._notifyExpireMinutes = notifyExpireMinutes;
         this._expireMinutes = expireMinutes;
@@ -65,7 +65,7 @@ internal class BarcodeService
     /// </summary>
     /// <param name="input">輸入字串</param>
     /// <returns></returns>
-    private ModelResult<Barcode> ConvertToBarcode(string input)
+    public ModelResult<Barcode> ConvertToBarcode(string input)
     {
         if (input?.Length != 15)
         {
@@ -86,7 +86,7 @@ internal class BarcodeService
 
         bool parsedDate = DateOnly.TryParse($"{year}/{month}/{day}", out DateOnly date);
         bool parsedHour = TimeOnly.TryParse($"{hour}:00", out TimeOnly time);
-        if (!parsedDate || !parsedHour)
+        if (!parsedDate || !parsedHour || date.Year < 1900 || date.Year > 2100)
         {
             return new("格式不符:第6至15碼須符合yyyyMMddHH格式");
         }
@@ -106,7 +106,7 @@ internal class BarcodeService
     /// <param name="barcode">條碼模型</param>
     /// <param name="systemTime">系統時間</param>
     /// <returns></returns>
-    private ModelResult Analyze(Barcode barcode, DateTime systemTime)
+    public ModelResult Analyze(Barcode barcode, DateTime systemTime)
     {
         // 商品即將到期:前5分鐘(含)到前1小時
         if (systemTime > barcode.FullDateTime.AddMinutes(this._notifyExpireMinutes) &&

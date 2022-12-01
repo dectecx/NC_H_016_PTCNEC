@@ -1,18 +1,13 @@
 ﻿using NC_H_016_PTCNEC.Extensions;
 using NC_H_016_PTCNEC.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace NC_H_016_PTCNEC.Services;
 
 /// <summary>
 /// 檔案服務
 /// </summary>
-internal class FileService
+public class FileService
 {
     /// <summary>
     /// 根目錄
@@ -27,7 +22,7 @@ internal class FileService
     /// <summary>
     /// 建構子
     /// </summary>
-    internal FileService(string rootPath, string basePath)
+    public FileService(string rootPath, string basePath)
     {
         this._rootPath = rootPath;
         this._basePath = basePath;
@@ -103,7 +98,7 @@ internal class FileService
     /// </summary>
     /// <param name="input">輸入字串</param>
     /// <returns></returns>
-    private ModelResult<FileVo> ConvertToFileVo(string input)
+    public ModelResult<FileVo> ConvertToFileVo(string input)
     {
         if (input?.Length != 18)
         {

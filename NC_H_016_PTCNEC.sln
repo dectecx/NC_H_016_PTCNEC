@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NC_H_016_PTCNEC", "NC_H_016_PTCNEC\NC_H_016_PTCNEC.csproj", "{5B068DC0-0398-47B3-8EED-4A9B09A693FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NC_H_016_PTCNEC", "NC_H_016_PTCNEC\NC_H_016_PTCNEC.csproj", "{5B068DC0-0398-47B3-8EED-4A9B09A693FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NC_H_016_PTCNECTests", "NC_H_016_PTCNECTests\NC_H_016_PTCNECTests.csproj", "{2CEF8EC2-B98E-4C31-8F27-3B84B3563591}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5B068DC0-0398-47B3-8EED-4A9B09A693FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B068DC0-0398-47B3-8EED-4A9B09A693FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B068DC0-0398-47B3-8EED-4A9B09A693FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CEF8EC2-B98E-4C31-8F27-3B84B3563591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CEF8EC2-B98E-4C31-8F27-3B84B3563591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CEF8EC2-B98E-4C31-8F27-3B84B3563591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CEF8EC2-B98E-4C31-8F27-3B84B3563591}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

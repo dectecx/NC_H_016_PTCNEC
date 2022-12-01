@@ -1,6 +1,6 @@
 ﻿namespace NC_H_016_PTCNEC.Models;
 
-class ModelResult
+public class ModelResult
 {
     public bool IsOk { get; private set; }
 
@@ -18,7 +18,7 @@ class ModelResult
     }
 }
 
-class ModelResult<T> : ModelResult
+public class ModelResult<T> : ModelResult
 {
     public T? Data { get; private set; }
 
